@@ -24,7 +24,7 @@ def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     keyboard_pb2_grpc.add_KeyboardServicer_to_server(
         Keyboard(), server)
-    server.add_insecure_port('[::]:54321')
+    server.add_insecure_port('[::]:54322')
     server.start()
     server.wait_for_termination()
 
